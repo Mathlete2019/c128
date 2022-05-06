@@ -1,7 +1,7 @@
-from selenium import webdriver
 from bs4 import BeautifulSoup
 import requests
 import time
+from selenium import webdriver
 import csv
 START_URL = "https://exoplanets.nasa.gov/exoplanet-catalog/"
 browser = webdriver.Chrome("./chromedriver")
@@ -57,7 +57,7 @@ def scrape_more_data(hyperlink):
 scrape()
 for index, data in enumerate(planet_data):
     scrape_more_data(data[5])
-    print(f"{index+1} page done 2")
+    print(f"{index+1} page done")
 final_planet_data = []
 for index, data in enumerate(planet_data):
     new_planet_data_element = new_planet_data[index]
